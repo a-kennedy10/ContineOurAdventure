@@ -8,18 +8,24 @@
 
 import Foundation
 
-struct TopLevelDictionary: Codable {
+struct TopLevelDictionary: Decodable {
     let data: SecondLevelDictionary
 }
 
-struct SecondLevelDictionary: Codable {
+struct SecondLevelDictionary: Decodable {
     let children: [ThirdLevelObject]
 }
 
-struct ThirdLevelObject: Codable {
+struct ThirdLevelObject: Decodable {
     let data: Post
 }
 
-struct Post: Codable {
+struct Post: Decodable {
     let title: String
+    
+//    private enum Codingkeys: String, CodingKey {
+//        case linkFlairText = "link_flair_text"
+//    }
+//
+//    let linkFlairText: String
 }
