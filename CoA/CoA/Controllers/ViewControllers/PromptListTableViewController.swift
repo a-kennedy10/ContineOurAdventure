@@ -21,7 +21,7 @@ class PromptListTableViewController: UITableViewController {
     }
 
     
-    // MARK: - helpers
+    // MARK: - helper functions
     func fetchPosts() {
         PostController.fetchPosts { (result) in
             DispatchQueue.main.async {

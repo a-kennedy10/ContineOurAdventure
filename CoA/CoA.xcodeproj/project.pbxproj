@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		FA26A0CC25474BBA00108E32 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA26A0CB25474BBA00108E32 /* PostTableViewCell.swift */; };
 		FA26A0CE25476A3D00108E32 /* AdventureCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA26A0CD25476A3D00108E32 /* AdventureCreationViewController.swift */; };
+		FA541E802548AE3000E7D889 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA541E7F2548AE3000E7D889 /* CloudKit.framework */; };
 		FAF4C0F72545069700C990FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4C0F62545069700C990FD /* AppDelegate.swift */; };
 		FAF4C0F92545069700C990FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4C0F82545069700C990FD /* SceneDelegate.swift */; };
 		FAF4C0FE2545069700C990FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAF4C0FC2545069700C990FD /* Main.storyboard */; };
@@ -26,6 +27,8 @@
 /* Begin PBXFileReference section */
 		FA26A0CB25474BBA00108E32 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		FA26A0CD25476A3D00108E32 /* AdventureCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureCreationViewController.swift; sourceTree = "<group>"; };
+		FA541E7D2548AE2800E7D889 /* CoA.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CoA.entitlements; sourceTree = "<group>"; };
+		FA541E7F2548AE3000E7D889 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		FAF4C0F32545069700C990FD /* CoA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF4C0F62545069700C990FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAF4C0F82545069700C990FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA541E802548AE3000E7D889 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,11 +65,20 @@
 			path = CustomViews;
 			sourceTree = "<group>";
 		};
+		FA541E7E2548AE3000E7D889 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FA541E7F2548AE3000E7D889 /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FAF4C0EA2545069700C990FD = {
 			isa = PBXGroup;
 			children = (
 				FAF4C0F52545069700C990FD /* CoA */,
 				FAF4C0F42545069700C990FD /* Products */,
+				FA541E7E2548AE3000E7D889 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,6 +93,7 @@
 		FAF4C0F52545069700C990FD /* CoA */ = {
 			isa = PBXGroup;
 			children = (
+				FA541E7D2548AE2800E7D889 /* CoA.entitlements */,
 				FAF4C10D2545075800C990FD /* Models */,
 				FAF4C10C2545075300C990FD /* Views */,
 				FAF4C10B2545074B00C990FD /* Controllers */,
@@ -380,6 +394,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CoA/CoA.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YP6AG3ZWW9;
 				INFOPLIST_FILE = CoA/Resources/Info.plist;
@@ -398,6 +413,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CoA/CoA.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YP6AG3ZWW9;
 				INFOPLIST_FILE = CoA/Resources/Info.plist;

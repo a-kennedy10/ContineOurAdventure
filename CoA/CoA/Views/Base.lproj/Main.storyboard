@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,7 +15,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="myg-wd-Hlb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" name="pageColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="promptCell" rowHeight="79" id="V6c-0A-Oo1" customClass="PostTableViewCell" customModule="CoA" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="79"/>
@@ -78,14 +79,35 @@
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZE-q1-N7F">
                                 <rect key="frame" x="32" y="766" width="350" height="30"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Save Adventure"/>
                                 <connections>
                                     <action selector="saveAdventureButtonTapped:" destination="YSo-zP-8yb" eventType="touchUpInside" id="pB7-Ph-ZMK"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Zbc-98-4rV">
+                                <rect key="frame" x="8" y="643" width="398" height="61"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maximum Word Count:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVg-6H-9pp">
+                                        <rect key="frame" x="0.0" y="0.0" width="398" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Word Count:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yy8-a9-xu2">
+                                        <rect key="frame" x="0.0" y="40.5" width="398" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="31O-5w-rWc" firstAttribute="trailing" secondItem="Zbc-98-4rV" secondAttribute="trailing" constant="8" id="2XS-mP-9qJ"/>
+                            <constraint firstItem="Zbc-98-4rV" firstAttribute="top" secondItem="Pla-ns-JI7" secondAttribute="bottom" constant="30" id="BK7-0e-ypY"/>
                             <constraint firstItem="Pla-ns-JI7" firstAttribute="centerX" secondItem="31O-5w-rWc" secondAttribute="centerX" id="Leo-4r-CmQ"/>
                             <constraint firstItem="tmq-pn-KcP" firstAttribute="centerX" secondItem="31O-5w-rWc" secondAttribute="centerX" id="Ovu-7e-j34"/>
                             <constraint firstItem="Pla-ns-JI7" firstAttribute="leading" secondItem="31O-5w-rWc" secondAttribute="leading" constant="8" id="YRm-0f-pX4"/>
@@ -95,6 +117,7 @@
                             <constraint firstItem="31O-5w-rWc" firstAttribute="trailing" secondItem="Pla-ns-JI7" secondAttribute="trailing" constant="8" id="hUx-W6-7kv"/>
                             <constraint firstItem="kZE-q1-N7F" firstAttribute="leading" secondItem="31O-5w-rWc" secondAttribute="leading" constant="32" id="jPo-sn-mZX"/>
                             <constraint firstItem="31O-5w-rWc" firstAttribute="trailing" secondItem="kZE-q1-N7F" secondAttribute="trailing" constant="32" id="k3S-iN-QcP"/>
+                            <constraint firstItem="Zbc-98-4rV" firstAttribute="leading" secondItem="31O-5w-rWc" secondAttribute="leading" constant="8" id="oAz-gQ-xO3"/>
                             <constraint firstItem="Pla-ns-JI7" firstAttribute="top" secondItem="tmq-pn-KcP" secondAttribute="bottom" constant="40" id="rrB-iy-C7M"/>
                             <constraint firstItem="31O-5w-rWc" firstAttribute="trailing" secondItem="tmq-pn-KcP" secondAttribute="trailing" constant="8" id="tif-oR-UVy"/>
                             <constraint firstItem="31O-5w-rWc" firstAttribute="bottom" secondItem="Pla-ns-JI7" secondAttribute="bottom" constant="200" id="w9I-Et-nme"/>
@@ -110,6 +133,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="adventureTextView" destination="Pla-ns-JI7" id="CLq-hj-f7G"/>
+                        <outlet property="maxWordCountLabel" destination="yVg-6H-9pp" id="1xi-p0-5Mt"/>
                         <outlet property="promptLabel" destination="tmq-pn-KcP" id="F3b-w1-VfE"/>
                     </connections>
                 </viewController>
@@ -279,5 +303,8 @@
         <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="pencil.and.ellipsis.rectangle" catalog="system" width="128" height="81"/>
         <image name="rectangle.and.paperclip" catalog="system" width="128" height="100"/>
+        <namedColor name="pageColor">
+            <color red="1" green="0.98039215686274506" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
