@@ -70,7 +70,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Pla-ns-JI7">
-                                <rect key="frame" x="8" y="156.5" width="398" height="456.5"/>
+                                <rect key="frame" x="8" y="176.5" width="398" height="436.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -87,7 +87,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Zbc-98-4rV">
-                                <rect key="frame" x="8" y="643" width="398" height="61"/>
+                                <rect key="frame" x="8" y="681" width="398" height="61"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maximum Word Count:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVg-6H-9pp">
                                         <rect key="frame" x="0.0" y="0.0" width="398" height="20.5"/>
@@ -106,8 +106,8 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="kZE-q1-N7F" firstAttribute="top" secondItem="Zbc-98-4rV" secondAttribute="bottom" constant="24" id="2MN-6K-eUS"/>
                             <constraint firstItem="31O-5w-rWc" firstAttribute="trailing" secondItem="Zbc-98-4rV" secondAttribute="trailing" constant="8" id="2XS-mP-9qJ"/>
-                            <constraint firstItem="Zbc-98-4rV" firstAttribute="top" secondItem="Pla-ns-JI7" secondAttribute="bottom" constant="30" id="BK7-0e-ypY"/>
                             <constraint firstItem="Pla-ns-JI7" firstAttribute="centerX" secondItem="31O-5w-rWc" secondAttribute="centerX" id="Leo-4r-CmQ"/>
                             <constraint firstItem="tmq-pn-KcP" firstAttribute="centerX" secondItem="31O-5w-rWc" secondAttribute="centerX" id="Ovu-7e-j34"/>
                             <constraint firstItem="Pla-ns-JI7" firstAttribute="leading" secondItem="31O-5w-rWc" secondAttribute="leading" constant="8" id="YRm-0f-pX4"/>
@@ -118,7 +118,7 @@
                             <constraint firstItem="kZE-q1-N7F" firstAttribute="leading" secondItem="31O-5w-rWc" secondAttribute="leading" constant="32" id="jPo-sn-mZX"/>
                             <constraint firstItem="31O-5w-rWc" firstAttribute="trailing" secondItem="kZE-q1-N7F" secondAttribute="trailing" constant="32" id="k3S-iN-QcP"/>
                             <constraint firstItem="Zbc-98-4rV" firstAttribute="leading" secondItem="31O-5w-rWc" secondAttribute="leading" constant="8" id="oAz-gQ-xO3"/>
-                            <constraint firstItem="Pla-ns-JI7" firstAttribute="top" secondItem="tmq-pn-KcP" secondAttribute="bottom" constant="40" id="rrB-iy-C7M"/>
+                            <constraint firstItem="Pla-ns-JI7" firstAttribute="top" secondItem="tmq-pn-KcP" secondAttribute="bottom" constant="60" id="rrB-iy-C7M"/>
                             <constraint firstItem="31O-5w-rWc" firstAttribute="trailing" secondItem="tmq-pn-KcP" secondAttribute="trailing" constant="8" id="tif-oR-UVy"/>
                             <constraint firstItem="31O-5w-rWc" firstAttribute="bottom" secondItem="Pla-ns-JI7" secondAttribute="bottom" constant="200" id="w9I-Et-nme"/>
                         </constraints>
@@ -148,7 +148,59 @@
                     <view key="view" contentMode="scaleToFill" id="3wF-N9-WPP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UUU-8f-CeE">
+                                <rect key="frame" x="8" y="125" width="398" height="467"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="muY-sm-VXR">
+                                        <rect key="frame" x="0.0" y="28" width="398" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="muY-sm-VXR" id="WTv-uQ-DDw">
+                                            <rect key="frame" x="0.0" y="0.0" width="398" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGJ-q7-cCM">
+                                <rect key="frame" x="8" y="96" width="398" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="G8D-IB-KzM">
+                                <rect key="frame" x="8" y="611" width="398" height="128"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="luj-nD-cEf">
+                                <rect key="frame" x="32" y="775" width="350" height="30"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Save Adventure"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="84c-eb-3WT" firstAttribute="trailing" secondItem="luj-nD-cEf" secondAttribute="trailing" constant="32" id="4UR-2y-Y9O"/>
+                            <constraint firstItem="luj-nD-cEf" firstAttribute="leading" secondItem="84c-eb-3WT" secondAttribute="leading" constant="32" id="C9i-Wm-6GX"/>
+                            <constraint firstItem="84c-eb-3WT" firstAttribute="trailing" secondItem="DGJ-q7-cCM" secondAttribute="trailing" constant="8" id="Cdo-wN-xCp"/>
+                            <constraint firstItem="84c-eb-3WT" firstAttribute="bottom" secondItem="luj-nD-cEf" secondAttribute="bottom" constant="8" id="Sza-ZX-eLj"/>
+                            <constraint firstItem="G8D-IB-KzM" firstAttribute="leading" secondItem="84c-eb-3WT" secondAttribute="leading" constant="8" id="V9T-Do-Vbg"/>
+                            <constraint firstItem="84c-eb-3WT" firstAttribute="bottom" secondItem="UUU-8f-CeE" secondAttribute="bottom" constant="221" id="aaJ-d1-Mif"/>
+                            <constraint firstItem="G8D-IB-KzM" firstAttribute="top" secondItem="UUU-8f-CeE" secondAttribute="bottom" constant="19" id="gOp-7w-94P"/>
+                            <constraint firstItem="84c-eb-3WT" firstAttribute="trailing" secondItem="G8D-IB-KzM" secondAttribute="trailing" constant="8" id="ho6-28-VMf"/>
+                            <constraint firstItem="luj-nD-cEf" firstAttribute="top" secondItem="G8D-IB-KzM" secondAttribute="bottom" constant="36" id="nvb-tR-7AP"/>
+                            <constraint firstItem="UUU-8f-CeE" firstAttribute="top" secondItem="DGJ-q7-cCM" secondAttribute="bottom" constant="8" id="omF-yy-SmP"/>
+                            <constraint firstItem="DGJ-q7-cCM" firstAttribute="leading" secondItem="84c-eb-3WT" secondAttribute="leading" constant="8" id="rMN-tI-UCe"/>
+                            <constraint firstAttribute="trailing" secondItem="UUU-8f-CeE" secondAttribute="trailing" constant="8" id="suS-sq-ht8"/>
+                            <constraint firstItem="UUU-8f-CeE" firstAttribute="leading" secondItem="84c-eb-3WT" secondAttribute="leading" constant="8" id="y6c-sF-iiN"/>
+                            <constraint firstItem="DGJ-q7-cCM" firstAttribute="top" secondItem="84c-eb-3WT" secondAttribute="top" constant="8" id="yEv-4T-hz4"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="84c-eb-3WT"/>
                     </view>
                     <navigationItem key="navigationItem" id="tvs-jz-FFh"/>

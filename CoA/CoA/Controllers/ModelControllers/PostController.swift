@@ -7,6 +7,7 @@
 // https://www.reddit.com/r/writingprompts
 
 import Foundation
+import CloudKit
 
 class PostController {
     

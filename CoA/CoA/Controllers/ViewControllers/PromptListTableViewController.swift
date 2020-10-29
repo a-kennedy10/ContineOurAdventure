@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CloudKit
 
 class PromptListTableViewController: UITableViewController {
 
@@ -30,7 +31,6 @@ class PromptListTableViewController: UITableViewController {
                     self.posts = posts
                     self.tableView.reloadData()
                 case .failure(let error):
-                    //present error to user
                     print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
                 }
             }

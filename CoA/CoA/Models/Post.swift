@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CloudKit
 
 struct TopLevelDictionary: Decodable {
     let data: SecondLevelDictionary

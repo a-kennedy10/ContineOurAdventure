@@ -13,4 +13,5 @@ enum AdventureError: LocalizedError {
     case thrownError(Error)
     case noData
     case unableToDecode
+    case ckError(Error)
 }
