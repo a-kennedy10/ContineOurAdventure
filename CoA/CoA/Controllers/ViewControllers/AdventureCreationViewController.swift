@@ -16,17 +16,16 @@ class AdventureCreationViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var adventureTextView: UITextView!
     @IBOutlet weak var maxWordCountLabel: UILabel!
     @IBOutlet weak var currentWordCountLabel: UILabel!
+    @IBOutlet weak var saveButton: UIButton!
     
+    var post: Post?
     
     // MARK: - lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(named: "pageColor")
-        self.maxWordCountLabel.text = "Maximum Word Count: 250"
         updateViews()
+        wordCount()
     }
-    
-    var post: Post?
     
     // MARK: - actions
     @IBAction func saveAdventureButtonTapped(_ sender: Any) {
@@ -48,17 +47,16 @@ class AdventureCreationViewController: UIViewController, UITextViewDelegate {
         adventureTextView.text = "Begin your Adventure here..."
         adventureTextView.textColor = UIColor.lightGray
         adventureTextView.backgroundColor = UIColor(named: "pageColor")
-        adventureTextView.layer.borderWidth = CGFloat(3)
-    }
-    
-    func checkMaxLength(adventureTextView: UITextView, maxLength: Int) {
-        if (adventureTextView.text.count > 250) {
-            adventureTextView.deleteBackward()
-        }
+        adventureTextView.layer.borderWidth = CGFloat(2)
+        saveButton.layer.borderWidth = CGFloat(2)
+        self.maxWordCountLabel.text = "Maximum Word Count: 250"
+        self.view.backgroundColor = UIColor(named: "pageColor")
+        
     }
     
     func wordCount() {
-        maxWordCountLabel.text = "\(adventureTextView.text.count)"
+        let words = adventureTextView.text.components(separatedBy: " ")
+        currentWordCountLabel.text = "Current Word Count: \(words.count)"
     }
     
     func presentGuideAlertController() {

@@ -14,6 +14,8 @@
 		FAAFD2D1254B4AA10065857E /* ContinueAdventureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAFD2D0254B4AA10065857E /* ContinueAdventureViewController.swift */; };
 		FAAFD2D3254B4ACF0065857E /* ArchivedAdventuresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAFD2D2254B4ACF0065857E /* ArchivedAdventuresTableViewController.swift */; };
 		FAAFD2D5254B4C740065857E /* ArchivedAdventureDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAFD2D4254B4C740065857E /* ArchivedAdventureDetailViewController.swift */; };
+		FAAFD2D7254C7A4B0065857E /* ContinueAdventureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAFD2D6254C7A4B0065857E /* ContinueAdventureTableViewCell.swift */; };
+		FAAFD2D9254C7AAE0065857E /* ArchivedAdventureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAFD2D8254C7AAE0065857E /* ArchivedAdventureTableViewCell.swift */; };
 		FAF4C0F72545069700C990FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4C0F62545069700C990FD /* AppDelegate.swift */; };
 		FAF4C0F92545069700C990FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4C0F82545069700C990FD /* SceneDelegate.swift */; };
 		FAF4C0FE2545069700C990FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAF4C0FC2545069700C990FD /* Main.storyboard */; };
@@ -37,6 +39,8 @@
 		FAAFD2D0254B4AA10065857E /* ContinueAdventureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueAdventureViewController.swift; sourceTree = "<group>"; };
 		FAAFD2D2254B4ACF0065857E /* ArchivedAdventuresTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivedAdventuresTableViewController.swift; sourceTree = "<group>"; };
 		FAAFD2D4254B4C740065857E /* ArchivedAdventureDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivedAdventureDetailViewController.swift; sourceTree = "<group>"; };
+		FAAFD2D6254C7A4B0065857E /* ContinueAdventureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueAdventureTableViewCell.swift; sourceTree = "<group>"; };
+		FAAFD2D8254C7AAE0065857E /* ArchivedAdventureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivedAdventureTableViewCell.swift; sourceTree = "<group>"; };
 		FAF4C0F32545069700C990FD /* CoA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF4C0F62545069700C990FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAF4C0F82545069700C990FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +73,8 @@
 			isa = PBXGroup;
 			children = (
 				FA26A0CB25474BBA00108E32 /* PostTableViewCell.swift */,
+				FAAFD2D6254C7A4B0065857E /* ContinueAdventureTableViewCell.swift */,
+				FAAFD2D8254C7AAE0065857E /* ArchivedAdventureTableViewCell.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -259,11 +265,13 @@
 				FAF4C10F2545078200C990FD /* Adventure.swift in Sources */,
 				FA26A0CE25476A3D00108E32 /* AdventureCreationViewController.swift in Sources */,
 				FAF4C1182546651200C990FD /* PostController.swift in Sources */,
+				FAAFD2D9254C7AAE0065857E /* ArchivedAdventureTableViewCell.swift in Sources */,
 				FAF4C11E2547071800C990FD /* PromptListTableViewController.swift in Sources */,
 				FA26A0CC25474BBA00108E32 /* PostTableViewCell.swift in Sources */,
 				FAAFD2D1254B4AA10065857E /* ContinueAdventureViewController.swift in Sources */,
 				FAF4C11C254706CC00C990FD /* AdventureController.swift in Sources */,
 				FAF4C11A254666AF00C990FD /* Post.swift in Sources */,
+				FAAFD2D7254C7A4B0065857E /* ContinueAdventureTableViewCell.swift in Sources */,
 				FAF4C0F92545069700C990FD /* SceneDelegate.swift in Sources */,
 				FAF4C116254664A600C990FD /* AdventureError.swift in Sources */,
 				FAAFD2CF254A0C600065857E /* User.swift in Sources */,

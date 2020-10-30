@@ -24,7 +24,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="79"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prompt Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqO-06-3VR">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqO-06-3VR">
                                             <rect key="frame" x="8" y="19" width="398" height="41"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -136,6 +136,7 @@
                         <outlet property="currentWordCountLabel" destination="Yy8-a9-xu2" id="zGM-Yo-qaC"/>
                         <outlet property="maxWordCountLabel" destination="yVg-6H-9pp" id="1xi-p0-5Mt"/>
                         <outlet property="promptLabel" destination="tmq-pn-KcP" id="F3b-w1-VfE"/>
+                        <outlet property="saveButton" destination="kZE-q1-N7F" id="7Mu-z8-lAZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eOk-NQ-GAJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -154,19 +155,19 @@
                                 <rect key="frame" x="8" y="125" width="398" height="417"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="muY-sm-VXR">
-                                        <rect key="frame" x="0.0" y="28" width="398" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="193" id="muY-sm-VXR" customClass="ContinueAdventureTableViewCell" customModule="CoA" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="398" height="193"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="muY-sm-VXR" id="WTv-uQ-DDw">
-                                            <rect key="frame" x="0.0" y="0.0" width="398" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="398" height="193"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGJ-q7-cCM">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGJ-q7-cCM">
                                 <rect key="frame" x="8" y="96" width="398" height="21"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -251,12 +252,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="archiveCell" rowHeight="50" id="oEI-I4-EXH">
-                                <rect key="frame" x="0.0" y="28" width="414" height="50"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="archiveCell" rowHeight="73" id="oEI-I4-EXH" customClass="ArchivedAdventureTableViewCell" customModule="CoA" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="73"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oEI-I4-EXH" id="Eti-iU-Gnk">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="73"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Archived Adventure Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6M7-8a-Wy6">
+                                            <rect key="frame" x="28" y="19" width="358" height="35"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="6M7-8a-Wy6" firstAttribute="centerY" secondItem="Eti-iU-Gnk" secondAttribute="centerY" id="F9x-HU-Ew8"/>
+                                        <constraint firstItem="6M7-8a-Wy6" firstAttribute="top" secondItem="Eti-iU-Gnk" secondAttribute="topMargin" constant="8" id="ujN-Mb-5bW"/>
+                                        <constraint firstItem="6M7-8a-Wy6" firstAttribute="leading" secondItem="Eti-iU-Gnk" secondAttribute="leadingMargin" constant="8" id="wPg-04-tug"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="6M7-8a-Wy6" secondAttribute="trailing" constant="8" id="xaq-Hm-Cek"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="JFa-JY-VQW" kind="show" identifier="toArchivedAdventureDetailVC" id="n6g-nW-wR5"/>
@@ -281,7 +296,20 @@
                     <view key="view" contentMode="scaleToFill" id="EQ5-QM-8N6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aiD-hi-x2R">
+                                <rect key="frame" x="8" y="96" width="398" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="aiD-hi-x2R" firstAttribute="top" secondItem="e6K-Cz-uDG" secondAttribute="top" constant="8" id="0fo-9K-cBn"/>
+                            <constraint firstItem="aiD-hi-x2R" firstAttribute="leading" secondItem="e6K-Cz-uDG" secondAttribute="leading" constant="8" id="Tvv-Io-I7X"/>
+                            <constraint firstItem="e6K-Cz-uDG" firstAttribute="trailing" secondItem="aiD-hi-x2R" secondAttribute="trailing" constant="8" id="W6h-RA-Zc7"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="e6K-Cz-uDG"/>
                     </view>
                     <navigationItem key="navigationItem" id="8jk-Eg-P6e"/>

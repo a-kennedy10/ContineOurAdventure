@@ -16,12 +16,12 @@ class ContinueAdventureViewController: UIViewController {
     @IBOutlet weak var maximumWordCountLabel: UIStackView!
     @IBOutlet weak var currentWordCountLabel: UILabel!
     
+    var adventures: [Adventure] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // fetch adventure
+        AdventureController.shared.fetchAdventure { (Adventure) in }
         self.view.backgroundColor = UIColor(named: "pageColor")
-
     }
     
     // MARK: - actions
@@ -30,13 +30,7 @@ class ContinueAdventureViewController: UIViewController {
         // pop back to title screen
     }
     
-    func fetchAdventure() {
-        
-    }
-
-    func saveAdventure() {
-        
-    }
+    
 
 }
 

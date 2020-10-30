@@ -28,7 +28,6 @@ class PostController {
         guard let baseURL = URL(string: StringConstants.baseURL) else { return completion(.failure(.invalidURL)) }
         let postURL = baseURL.appendingPathComponent(StringConstants.postEndpoint)
         let finalURL = postURL.appendingPathComponent(StringConstants.jsonExtension)
-        print(finalURL)
         
         URLSession.shared.dataTask(with: finalURL) { (data, _, error) in
             if let error = error {

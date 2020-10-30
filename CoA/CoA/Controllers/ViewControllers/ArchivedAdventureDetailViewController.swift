@@ -10,6 +10,9 @@ import UIKit
 
 class ArchivedAdventureDetailViewController: UIViewController {
 
+    
+    var adventure: Adventure?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
