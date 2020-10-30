@@ -15,13 +15,15 @@ class AdventureCreationViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var promptLabel: UILabel!
     @IBOutlet weak var adventureTextView: UITextView!
     @IBOutlet weak var maxWordCountLabel: UILabel!
+    @IBOutlet weak var currentWordCountLabel: UILabel!
+    
     
     // MARK: - lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(named: "pageColor")
+        self.maxWordCountLabel.text = "Maximum Word Count: 250"
         updateViews()
-        
     }
     
     var post: Post?
@@ -29,8 +31,10 @@ class AdventureCreationViewController: UIViewController, UITextViewDelegate {
     // MARK: - actions
     @IBAction func saveAdventureButtonTapped(_ sender: Any) {
         presentConfirmSaveController()
-        
-        // pop back to title screen?
+        guard let title = promptLabel.text,
+            let text = adventureTextView.text else { return }
+        AdventureController.shared.createAdventureWith(title: title, text: text, entryCounter: 1) { (adventure) in }
+        self.tabBarController?.selectedIndex = 0 // change to pop to title screen
         
     }
     @IBAction func infoButtonTapped(_ sender: Any) {
@@ -58,9 +62,8 @@ class AdventureCreationViewController: UIViewController, UITextViewDelegate {
     }
     
     func presentGuideAlertController() {
-        let guideAlertController = UIAlertController(title: "Thank you for choosing to Start An Adventure!", message: "Please use the prompt that you chose to Start An Adventure. Upon saving, your Adventure will be available for other users to continue.", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default) { (_) in
-        }
+        let guideAlertController = UIAlertController(title: "Thank you for choosing to Start An Adventure!", message: "Please use the writing prompt that you selected to Start An Adventure. Upon saving, your Adventure will be available for other users to continue.", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { (_) in }
         guideAlertController.addAction(okAction)
         present(guideAlertController, animated: true)
     }

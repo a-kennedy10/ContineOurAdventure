@@ -11,6 +11,9 @@
 		FA26A0CE25476A3D00108E32 /* AdventureCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA26A0CD25476A3D00108E32 /* AdventureCreationViewController.swift */; };
 		FA541E802548AE3000E7D889 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA541E7F2548AE3000E7D889 /* CloudKit.framework */; };
 		FAAFD2CF254A0C600065857E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAFD2CE254A0C600065857E /* User.swift */; };
+		FAAFD2D1254B4AA10065857E /* ContinueAdventureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAFD2D0254B4AA10065857E /* ContinueAdventureViewController.swift */; };
+		FAAFD2D3254B4ACF0065857E /* ArchivedAdventuresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAFD2D2254B4ACF0065857E /* ArchivedAdventuresTableViewController.swift */; };
+		FAAFD2D5254B4C740065857E /* ArchivedAdventureDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAFD2D4254B4C740065857E /* ArchivedAdventureDetailViewController.swift */; };
 		FAF4C0F72545069700C990FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4C0F62545069700C990FD /* AppDelegate.swift */; };
 		FAF4C0F92545069700C990FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4C0F82545069700C990FD /* SceneDelegate.swift */; };
 		FAF4C0FE2545069700C990FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAF4C0FC2545069700C990FD /* Main.storyboard */; };
@@ -31,6 +34,9 @@
 		FA541E7D2548AE2800E7D889 /* CoA.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CoA.entitlements; sourceTree = "<group>"; };
 		FA541E7F2548AE3000E7D889 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		FAAFD2CE254A0C600065857E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FAAFD2D0254B4AA10065857E /* ContinueAdventureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueAdventureViewController.swift; sourceTree = "<group>"; };
+		FAAFD2D2254B4ACF0065857E /* ArchivedAdventuresTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivedAdventuresTableViewController.swift; sourceTree = "<group>"; };
+		FAAFD2D4254B4C740065857E /* ArchivedAdventureDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivedAdventureDetailViewController.swift; sourceTree = "<group>"; };
 		FAF4C0F32545069700C990FD /* CoA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF4C0F62545069700C990FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAF4C0F82545069700C990FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -160,6 +166,9 @@
 			children = (
 				FAF4C11D2547071800C990FD /* PromptListTableViewController.swift */,
 				FA26A0CD25476A3D00108E32 /* AdventureCreationViewController.swift */,
+				FAAFD2D0254B4AA10065857E /* ContinueAdventureViewController.swift */,
+				FAAFD2D2254B4ACF0065857E /* ArchivedAdventuresTableViewController.swift */,
+				FAAFD2D4254B4C740065857E /* ArchivedAdventureDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -244,12 +253,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAAFD2D5254B4C740065857E /* ArchivedAdventureDetailViewController.swift in Sources */,
 				FAF4C0F72545069700C990FD /* AppDelegate.swift in Sources */,
+				FAAFD2D3254B4ACF0065857E /* ArchivedAdventuresTableViewController.swift in Sources */,
 				FAF4C10F2545078200C990FD /* Adventure.swift in Sources */,
 				FA26A0CE25476A3D00108E32 /* AdventureCreationViewController.swift in Sources */,
 				FAF4C1182546651200C990FD /* PostController.swift in Sources */,
 				FAF4C11E2547071800C990FD /* PromptListTableViewController.swift in Sources */,
 				FA26A0CC25474BBA00108E32 /* PostTableViewCell.swift in Sources */,
+				FAAFD2D1254B4AA10065857E /* ContinueAdventureViewController.swift in Sources */,
 				FAF4C11C254706CC00C990FD /* AdventureController.swift in Sources */,
 				FAF4C11A254666AF00C990FD /* Post.swift in Sources */,
 				FAF4C0F92545069700C990FD /* SceneDelegate.swift in Sources */,

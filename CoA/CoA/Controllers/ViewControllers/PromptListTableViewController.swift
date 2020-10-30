@@ -1,5 +1,5 @@
 //
-//  PromptListTableViewController.swift
+//  PostListTableViewController.swift
 //  CoA
 //
 //  Created by Alex Kennedy on 10/26/20.
@@ -13,12 +13,14 @@ class PromptListTableViewController: UITableViewController {
 
     // MARK: - properties
     var posts: [Post] = []
+
     
     // MARK: - lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchPosts()
         self.view.backgroundColor = UIColor(named: "pageColor")
+        
     }
 
     

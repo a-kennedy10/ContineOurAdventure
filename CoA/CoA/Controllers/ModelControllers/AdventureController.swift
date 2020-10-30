@@ -20,8 +20,8 @@ class AdventureController {
     let publicDB = CKContainer.default().publicCloudDatabase
     
     // MARK: - CRUD
-    func createAdventureWith(text: String, timestamp: Date = Date(), isArchived: Bool = false, entryCounter: Int, completion: @escaping (Result<Adventure?, AdventureError>) -> Void) {
-        let adventure = Adventure(text: text, timestamp: timestamp, isArchived: isArchived, entryCounter: entryCounter)
+    func createAdventureWith(title: String, text: String, timestamp: Date = Date(), isArchived: Bool = false, entryCounter: Int, completion: @escaping (Result<Adventure?, AdventureError>) -> Void) {
+        let adventure = Adventure(title: title, text: text, timestamp: timestamp, isArchived: isArchived, entryCounter: entryCounter)
         self.adventures.append(adventure)
         let record = CKRecord(adventure: adventure)
         
@@ -51,7 +51,7 @@ class AdventureController {
         }
     }
     
-    func saveAdventure(with text: String, date: Date, completion: @escaping (Result<Adventure?, AdventureError >) -> Void) {
+    func saveAdventure(with title: String, text: String, date: Date, entryCounter: Int, isArchived: Bool, completion: @escaping (Result<Adventure?, AdventureError >) -> Void) {
         
 //        incrementEntryCount(with: Adventure)
     }
