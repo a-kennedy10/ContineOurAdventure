@@ -8,13 +8,12 @@
 
 import UIKit
 
-class ContinueAdventureViewController: UIViewController {
+class ContinueAdventureViewController: UIViewController, UITextViewDelegate {
 
     // MARK: - outlets
     @IBOutlet weak var adventureTitleLabel: UILabel!
     @IBOutlet weak var continueAdventureTextView: UITextView!
-    @IBOutlet weak var maximumWordCountLabel: UIStackView!
-    @IBOutlet weak var currentWordCountLabel: UILabel!
+    @IBOutlet weak var maximumWordCountLabel: UILabel!
     
     var adventures: [Adventure] = []
     
@@ -22,17 +21,29 @@ class ContinueAdventureViewController: UIViewController {
         super.viewDidLoad()
         AdventureController.shared.fetchAdventure { (Adventure) in }
         self.view.backgroundColor = UIColor(named: "pageColor")
+        continueAdventureTextView.text = ""
+        maximumWordCountLabel.text = "Word Count: 0/250"
+        continueAdventureTextView.delegate = self
     }
     
     // MARK: - actions
     @IBAction func saveAdventureButtonTapped(_ sender: Any) {
-        // save
+        
+    
+        self.tabBarController?.selectedIndex = 0
         // pop back to title screen
     }
     
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        self.maximumWordCountLabel.text = "\(countWords(text: textView.text))/250"
+        return true
+    }
+    
+    func countWords(text: String) -> Int {
+        let components = text.components(separatedBy: .whitespacesAndNewlines)
+        let words = components.filter { !$0.isEmpty }
+        return words.count
+    }
     
 
 }
-
-
-//new custom cell

@@ -52,8 +52,25 @@ class AdventureController {
     }
     
     func saveAdventure(with title: String, text: String, date: Date, entryCounter: Int, isArchived: Bool, completion: @escaping (Result<Adventure?, AdventureError >) -> Void) {
+        let adventure = Adventure(title: title, text: text, isArchived: isArchived, entryCounter: entryCounter)
+        self.adventures.append(adventure)
+        let record = CKRecord(adventure: adventure)
         
-//        incrementEntryCount(with: Adventure)
+        publicDB.save(record) { (record, error) in
+            if let error = error {
+                print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+                return completion(.failure(.ckError(error)))
+            }
+            guard let record = record, let adventure = Adventure(ckRecord: record) else { return completion(.failure(.noData)) }
+            completion(.success(adventure))
+        }
+        
+        if adventure.entryCounter >= 10 {
+            adventure.isArchived = true
+        } else {
+            adventure.entryCounter += 1
+        }
+        
     }
     
     func incrementEntryCount(with adventure: Adventure) {

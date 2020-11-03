@@ -14,7 +14,6 @@ class AdventureCreationViewController: UIViewController, UITextViewDelegate {
     // MARK: - outlets
     @IBOutlet weak var promptLabel: UILabel!
     @IBOutlet weak var adventureTextView: UITextView!
-    @IBOutlet weak var maxWordCountLabel: UILabel!
     @IBOutlet weak var currentWordCountLabel: UILabel!
     @IBOutlet weak var saveButton: UIButton!
     
@@ -24,7 +23,7 @@ class AdventureCreationViewController: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
-        wordCount()
+        
     }
     
     // MARK: - actions
@@ -44,19 +43,25 @@ class AdventureCreationViewController: UIViewController, UITextViewDelegate {
     // MARK: - helper functions
     func updateViews() {
         promptLabel.text = "\(post!.title)"
-        adventureTextView.text = "Begin your Adventure here..."
-        adventureTextView.textColor = UIColor.lightGray
         adventureTextView.backgroundColor = UIColor(named: "pageColor")
         adventureTextView.layer.borderWidth = CGFloat(2)
         saveButton.layer.borderWidth = CGFloat(2)
-        self.maxWordCountLabel.text = "Maximum Word Count: 250"
         self.view.backgroundColor = UIColor(named: "pageColor")
+        adventureTextView.text = ""
+        currentWordCountLabel.text = "Word Count: 0/250"
+        adventureTextView.delegate = self
         
     }
     
-    func wordCount() {
-        let words = adventureTextView.text.components(separatedBy: " ")
-        currentWordCountLabel.text = "Current Word Count: \(words.count)"
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        self.currentWordCountLabel.text = "\(countWords(text: textView.text))/250"
+        return true
+    }
+    
+    func countWords(text: String) -> Int {
+        let components = text.components(separatedBy: .whitespacesAndNewlines)
+        let words = components.filter { !$0.isEmpty }
+        return words.count
     }
     
     func presentGuideAlertController() {

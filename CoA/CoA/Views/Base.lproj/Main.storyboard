@@ -69,14 +69,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Pla-ns-JI7">
-                                <rect key="frame" x="8" y="176.5" width="398" height="436.5"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="a4u-Eh-D9s">
+                                <rect key="frame" x="8" y="176.5" width="398" height="459.5"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Pla-ns-JI7">
+                                        <rect key="frame" x="0.0" y="0.0" width="398" height="437"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Word Count:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yy8-a9-xu2">
+                                        <rect key="frame" x="0.0" y="445" width="398" height="14.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZE-q1-N7F">
                                 <rect key="frame" x="32" y="766" width="350" height="30"/>
                                 <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -86,41 +97,20 @@
                                     <action selector="saveAdventureButtonTapped:" destination="YSo-zP-8yb" eventType="touchUpInside" id="pB7-Ph-ZMK"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Zbc-98-4rV">
-                                <rect key="frame" x="8" y="725" width="398" height="33"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maximum Word Count:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVg-6H-9pp">
-                                        <rect key="frame" x="0.0" y="0.0" width="398" height="14.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Word Count:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yy8-a9-xu2">
-                                        <rect key="frame" x="0.0" y="18.5" width="398" height="14.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="kZE-q1-N7F" firstAttribute="top" secondItem="Zbc-98-4rV" secondAttribute="bottom" constant="8" id="2MN-6K-eUS"/>
-                            <constraint firstItem="31O-5w-rWc" firstAttribute="trailing" secondItem="Zbc-98-4rV" secondAttribute="trailing" constant="8" id="2XS-mP-9qJ"/>
-                            <constraint firstItem="Pla-ns-JI7" firstAttribute="centerX" secondItem="31O-5w-rWc" secondAttribute="centerX" id="Leo-4r-CmQ"/>
                             <constraint firstItem="tmq-pn-KcP" firstAttribute="centerX" secondItem="31O-5w-rWc" secondAttribute="centerX" id="Ovu-7e-j34"/>
-                            <constraint firstItem="Pla-ns-JI7" firstAttribute="leading" secondItem="31O-5w-rWc" secondAttribute="leading" constant="8" id="YRm-0f-pX4"/>
+                            <constraint firstItem="kZE-q1-N7F" firstAttribute="top" secondItem="a4u-Eh-D9s" secondAttribute="bottom" constant="130" id="ZQg-LJ-4Dk"/>
                             <constraint firstItem="tmq-pn-KcP" firstAttribute="leading" secondItem="31O-5w-rWc" secondAttribute="leading" constant="8" id="cWd-v5-5DK"/>
                             <constraint firstAttribute="bottom" secondItem="kZE-q1-N7F" secondAttribute="bottom" constant="100" id="dMl-5e-LAN"/>
                             <constraint firstItem="tmq-pn-KcP" firstAttribute="top" secondItem="31O-5w-rWc" secondAttribute="top" constant="8" id="gyh-ZD-qrY"/>
-                            <constraint firstItem="31O-5w-rWc" firstAttribute="trailing" secondItem="Pla-ns-JI7" secondAttribute="trailing" constant="8" id="hUx-W6-7kv"/>
                             <constraint firstItem="kZE-q1-N7F" firstAttribute="leading" secondItem="31O-5w-rWc" secondAttribute="leading" constant="32" id="jPo-sn-mZX"/>
                             <constraint firstItem="31O-5w-rWc" firstAttribute="trailing" secondItem="kZE-q1-N7F" secondAttribute="trailing" constant="32" id="k3S-iN-QcP"/>
-                            <constraint firstItem="Zbc-98-4rV" firstAttribute="leading" secondItem="31O-5w-rWc" secondAttribute="leading" constant="8" id="oAz-gQ-xO3"/>
-                            <constraint firstItem="Pla-ns-JI7" firstAttribute="top" secondItem="tmq-pn-KcP" secondAttribute="bottom" constant="60" id="rrB-iy-C7M"/>
+                            <constraint firstItem="a4u-Eh-D9s" firstAttribute="leading" secondItem="31O-5w-rWc" secondAttribute="leading" constant="8" id="t2e-Uf-NTk"/>
                             <constraint firstItem="31O-5w-rWc" firstAttribute="trailing" secondItem="tmq-pn-KcP" secondAttribute="trailing" constant="8" id="tif-oR-UVy"/>
-                            <constraint firstItem="31O-5w-rWc" firstAttribute="bottom" secondItem="Pla-ns-JI7" secondAttribute="bottom" constant="200" id="w9I-Et-nme"/>
+                            <constraint firstItem="31O-5w-rWc" firstAttribute="trailing" secondItem="a4u-Eh-D9s" secondAttribute="trailing" constant="8" id="wiL-0N-f4Q"/>
+                            <constraint firstItem="a4u-Eh-D9s" firstAttribute="top" secondItem="tmq-pn-KcP" secondAttribute="bottom" constant="60" id="yTL-Pw-eyi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="31O-5w-rWc"/>
                     </view>
@@ -134,7 +124,6 @@
                     <connections>
                         <outlet property="adventureTextView" destination="Pla-ns-JI7" id="CLq-hj-f7G"/>
                         <outlet property="currentWordCountLabel" destination="Yy8-a9-xu2" id="zGM-Yo-qaC"/>
-                        <outlet property="maxWordCountLabel" destination="yVg-6H-9pp" id="1xi-p0-5Mt"/>
                         <outlet property="promptLabel" destination="tmq-pn-KcP" id="F3b-w1-VfE"/>
                         <outlet property="saveButton" destination="kZE-q1-N7F" id="7Mu-z8-lAZ"/>
                     </connections>
@@ -152,7 +141,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UUU-8f-CeE">
-                                <rect key="frame" x="8" y="125" width="398" height="417"/>
+                                <rect key="frame" x="8" y="125" width="398" height="435.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="193" id="muY-sm-VXR" customClass="ContinueAdventureTableViewCell" customModule="CoA" customModuleProvider="target">
@@ -181,7 +170,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="rXZ-DE-ahx">
-                                <rect key="frame" x="8" y="734" width="398" height="33"/>
+                                <rect key="frame" x="8" y="752.5" width="398" height="14.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maximum Word Count:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kVj-9E-7ow">
                                         <rect key="frame" x="0.0" y="0.0" width="398" height="14.5"/>
@@ -189,16 +178,10 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Word Count:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSA-sA-nqb">
-                                        <rect key="frame" x="0.0" y="18.5" width="398" height="14.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="G8D-IB-KzM">
-                                <rect key="frame" x="8" y="550" width="398" height="176"/>
+                                <rect key="frame" x="8" y="568.5" width="398" height="176"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="176" id="7oy-uY-7vs"/>
@@ -235,7 +218,6 @@
                     <connections>
                         <outlet property="adventureTitleLabel" destination="DGJ-q7-cCM" id="7uA-2X-suq"/>
                         <outlet property="continueAdventureTextView" destination="G8D-IB-KzM" id="9JC-op-Hhc"/>
-                        <outlet property="currentWordCountLabel" destination="eSA-sA-nqb" id="gtR-xF-3Sd"/>
                         <outlet property="maximumWordCountLabel" destination="rXZ-DE-ahx" id="tkg-GR-kWv"/>
                     </connections>
                 </viewController>
