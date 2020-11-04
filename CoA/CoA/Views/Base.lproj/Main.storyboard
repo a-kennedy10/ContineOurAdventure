@@ -132,7 +132,7 @@
             </objects>
             <point key="canvasLocation" x="2494.202898550725" y="-38.169642857142854"/>
         </scene>
-        <!--Continue Adventure View Controller-->
+        <!--Continue Adventure-->
         <scene sceneID="gSW-kr-jJ5">
             <objects>
                 <viewController id="efe-46-VNg" customClass="ContinueAdventureViewController" customModule="CoA" customModuleProvider="target" sceneMemberID="viewController">
@@ -143,6 +143,9 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UUU-8f-CeE">
                                 <rect key="frame" x="8" y="125" width="398" height="435.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="435.5" id="pCO-bY-OXj"/>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="193" id="muY-sm-VXR" customClass="ContinueAdventureTableViewCell" customModule="CoA" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="398" height="193"/>
@@ -169,43 +172,44 @@
                                     <action selector="saveAdventureButtonTapped:" destination="efe-46-VNg" eventType="touchUpInside" id="5uv-37-1JY"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="rXZ-DE-ahx">
-                                <rect key="frame" x="8" y="752.5" width="398" height="14.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BVV-rH-fro">
+                                <rect key="frame" x="8" y="568.5" width="398" height="198.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maximum Word Count:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kVj-9E-7ow">
-                                        <rect key="frame" x="0.0" y="0.0" width="398" height="14.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="G8D-IB-KzM">
+                                        <rect key="frame" x="0.0" y="0.0" width="398" height="176"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="176" id="7oy-uY-7vs"/>
+                                        </constraints>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="rXZ-DE-ahx">
+                                        <rect key="frame" x="0.0" y="184" width="398" height="14.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maximum Word Count:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kVj-9E-7ow">
+                                                <rect key="frame" x="0.0" y="0.0" width="398" height="14.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="G8D-IB-KzM">
-                                <rect key="frame" x="8" y="568.5" width="398" height="176"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="176" id="7oy-uY-7vs"/>
-                                </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="84c-eb-3WT" firstAttribute="trailing" secondItem="rXZ-DE-ahx" secondAttribute="trailing" constant="8" id="4PV-pU-Se0"/>
                             <constraint firstItem="84c-eb-3WT" firstAttribute="trailing" secondItem="luj-nD-cEf" secondAttribute="trailing" constant="32" id="4UR-2y-Y9O"/>
-                            <constraint firstItem="rXZ-DE-ahx" firstAttribute="leading" secondItem="G8D-IB-KzM" secondAttribute="leading" id="61p-id-Hy1"/>
                             <constraint firstItem="luj-nD-cEf" firstAttribute="leading" secondItem="84c-eb-3WT" secondAttribute="leading" constant="32" id="C9i-Wm-6GX"/>
                             <constraint firstItem="84c-eb-3WT" firstAttribute="trailing" secondItem="DGJ-q7-cCM" secondAttribute="trailing" constant="8" id="Cdo-wN-xCp"/>
-                            <constraint firstItem="luj-nD-cEf" firstAttribute="top" secondItem="rXZ-DE-ahx" secondAttribute="bottom" constant="8" symbolic="YES" id="Gf5-D5-q3Q"/>
+                            <constraint firstItem="UUU-8f-CeE" firstAttribute="leading" secondItem="BVV-rH-fro" secondAttribute="leading" id="L72-69-nbq"/>
+                            <constraint firstItem="BVV-rH-fro" firstAttribute="top" secondItem="UUU-8f-CeE" secondAttribute="bottom" constant="8" id="Ozd-Nj-0zG"/>
                             <constraint firstItem="84c-eb-3WT" firstAttribute="bottom" secondItem="luj-nD-cEf" secondAttribute="bottom" constant="8" id="Sza-ZX-eLj"/>
-                            <constraint firstItem="G8D-IB-KzM" firstAttribute="leading" secondItem="84c-eb-3WT" secondAttribute="leading" constant="8" id="V9T-Do-Vbg"/>
-                            <constraint firstItem="G8D-IB-KzM" firstAttribute="top" secondItem="UUU-8f-CeE" secondAttribute="bottom" constant="8" id="gOp-7w-94P"/>
-                            <constraint firstItem="84c-eb-3WT" firstAttribute="trailing" secondItem="G8D-IB-KzM" secondAttribute="trailing" constant="8" id="ho6-28-VMf"/>
+                            <constraint firstItem="UUU-8f-CeE" firstAttribute="trailing" secondItem="BVV-rH-fro" secondAttribute="trailing" id="Umh-bV-hzJ"/>
                             <constraint firstItem="UUU-8f-CeE" firstAttribute="top" secondItem="DGJ-q7-cCM" secondAttribute="bottom" constant="8" id="omF-yy-SmP"/>
-                            <constraint firstItem="rXZ-DE-ahx" firstAttribute="top" secondItem="G8D-IB-KzM" secondAttribute="bottom" constant="8" id="pJJ-jk-iY9"/>
                             <constraint firstItem="DGJ-q7-cCM" firstAttribute="leading" secondItem="84c-eb-3WT" secondAttribute="leading" constant="8" id="rMN-tI-UCe"/>
                             <constraint firstItem="UUU-8f-CeE" firstAttribute="top" secondItem="3wF-N9-WPP" secondAttribute="top" constant="125" id="s90-3l-uOV"/>
                             <constraint firstAttribute="trailing" secondItem="UUU-8f-CeE" secondAttribute="trailing" constant="8" id="suS-sq-ht8"/>
@@ -214,11 +218,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="84c-eb-3WT"/>
                     </view>
-                    <navigationItem key="navigationItem" id="tvs-jz-FFh"/>
+                    <navigationItem key="navigationItem" title="Continue Adventure" id="tvs-jz-FFh"/>
                     <connections>
                         <outlet property="adventureTitleLabel" destination="DGJ-q7-cCM" id="7uA-2X-suq"/>
                         <outlet property="continueAdventureTextView" destination="G8D-IB-KzM" id="9JC-op-Hhc"/>
-                        <outlet property="maximumWordCountLabel" destination="rXZ-DE-ahx" id="tkg-GR-kWv"/>
+                        <outlet property="maximumWordCountLabel" destination="kVj-9E-7ow" id="P7L-PG-xCu"/>
+                        <outlet property="saveContinuedAdventureButton" destination="luj-nD-cEf" id="aXF-VV-gHc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NdW-kk-zt2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

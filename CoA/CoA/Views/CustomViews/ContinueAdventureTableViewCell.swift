@@ -10,15 +10,14 @@ import UIKit
 
 class ContinueAdventureTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    var adventure: Adventure? {
+        didSet {
+            updateViews()
+        }
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    func updateViews() {
+        self.backgroundColor = UIColor(named: "pageColor")
     }
 
 }

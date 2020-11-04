@@ -23,15 +23,11 @@ class AdventureCreationViewController: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
-        
     }
     
     // MARK: - actions
     @IBAction func saveAdventureButtonTapped(_ sender: Any) {
         presentConfirmSaveController()
-        guard let title = promptLabel.text,
-            let text = adventureTextView.text else { return }
-        AdventureController.shared.createAdventureWith(title: title, text: text, entryCounter: 1) { (adventure) in }
         self.tabBarController?.selectedIndex = 0 // change to pop to title screen
         
     }
@@ -74,6 +70,12 @@ class AdventureCreationViewController: UIViewController, UITextViewDelegate {
     func presentConfirmSaveController() {
         let confirmAlertController = UIAlertController(title: "Confirm", message: "Would you like to save your Adventure?", preferredStyle: .alert)
         let confirmAction = UIAlertAction(title: "Save", style: .default) { (_) in
+            guard !self.adventureTextView.text.isEmpty else { return }
+            
+            guard let title = self.promptLabel.text,
+                let text = self.adventureTextView.text else { return }
+            
+            AdventureController.shared.createAdventureWith(title: title, text: text, entryCounter: 1) { (adventure) in }
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in
         }

@@ -48,28 +48,24 @@ class AdventureController {
             let adventures = records.compactMap{ Adventure(ckRecord: $0) }
             self.adventures = adventures
             completion(.success(adventures))
+            
         }
     }
     
-    func saveAdventure(with title: String, text: String, date: Date, entryCounter: Int, isArchived: Bool, completion: @escaping (Result<Adventure?, AdventureError >) -> Void) {
-        let adventure = Adventure(title: title, text: text, isArchived: isArchived, entryCounter: entryCounter)
-        self.adventures.append(adventure)
-        let record = CKRecord(adventure: adventure)
-        
-        publicDB.save(record) { (record, error) in
+    func update(adventure: Adventure, completion: @escaping (Result<Adventure, AdventureError >) -> Void) {
+        let adventureToUpdate = CKRecord(adventure: adventure)
+        let operation = CKModifyRecordsOperation(recordsToSave: [adventureToUpdate], recordIDsToDelete: nil)
+        operation.savePolicy = .changedKeys
+        operation.qualityOfService = .userInteractive
+        operation.modifyRecordsCompletionBlock = { (records, _, error) in
             if let error = error {
-                print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
                 return completion(.failure(.ckError(error)))
             }
-            guard let record = record, let adventure = Adventure(ckRecord: record) else { return completion(.failure(.noData)) }
-            completion(.success(adventure))
+            guard let record = records?.first,
+                let updatedAdventure = Adventure(ckRecord: record) else { return completion(.failure(.noData)) }
+            completion(.success(updatedAdventure))
         }
-        
-        if adventure.entryCounter >= 10 {
-            adventure.isArchived = true
-        } else {
-            adventure.entryCounter += 1
-        }
+        publicDB.add(operation)
         
     }
     
