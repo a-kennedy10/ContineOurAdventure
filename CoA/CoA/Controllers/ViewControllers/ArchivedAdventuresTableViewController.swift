@@ -12,13 +12,13 @@ class ArchivedAdventuresTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        AdventureController.shared.fetchAdventureToArchive { (adventure) in
+            
+        }
     }
     
     var adventures: [Adventure] = []
     
-    func fetchArchivedAdventures(with isArchived: Bool = true) {
-        
-    }
     
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

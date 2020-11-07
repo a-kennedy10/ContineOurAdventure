@@ -50,7 +50,7 @@ class AdventureCreationViewController: UIViewController, UITextViewDelegate {
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        self.currentWordCountLabel.text = "\(countWords(text: textView.text))/250"
+        self.currentWordCountLabel.text = "Word Count: \(countWords(text: textView.text))/250"
         return true
     }
     

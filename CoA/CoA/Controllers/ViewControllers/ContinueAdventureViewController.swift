@@ -22,17 +22,16 @@ class ContinueAdventureViewController: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
-        AdventureController.shared.fetchAdventure { (result) in }
-        
-        
+        AdventureController.shared.fetchAdventureToContinue { (result) in }
     }
     
     // MARK: - actions
     @IBAction func saveAdventureButtonTapped(_ sender: Any) {
-        
+        self.tabBarController?.selectedIndex = 0
     
-//        self.tabBarController?.selectedIndex = 0
-        // pop back to title screen
+    }
+    @IBAction func guideButtonTapped(_ sender: Any) {
+        presentGuideAlertController()
     }
     
     // MARK: - helper functions
@@ -42,13 +41,20 @@ class ContinueAdventureViewController: UIViewController, UITextViewDelegate {
         saveContinuedAdventureButton.layer.borderWidth = CGFloat(2)
         self.view.backgroundColor = UIColor(named: "pageColor")
         continueAdventureTextView.text = ""
-        maximumWordCountLabel.text = "Word Count: 0/250"
+        maximumWordCountLabel.text = "0/250"
         continueAdventureTextView.delegate = self
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        self.maximumWordCountLabel.text = "\(countWords(text: textView.text))/250"
+        self.maximumWordCountLabel.text = "Word count: \(countWords(text: textView.text))/250"
         return true
+    }
+    
+    private func presentGuideAlertController() {
+        let guideAlertController = UIAlertController(title: "Time to \n Continue An Adventure!", message: "Here you can Continue an Adventure from another user. After 10 contributions, the Adventure will be saved in the archives.", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { (_) in }
+        guideAlertController.addAction(okAction)
+        present(guideAlertController, animated: true)
     }
     
     func countWords(text: String) -> Int {
@@ -64,10 +70,15 @@ class ContinueAdventureViewController: UIViewController, UITextViewDelegate {
         let confirmAction = UIAlertAction(title: "Save", style: .default) { (_) in
             guard !self.continueAdventureTextView.text.isEmpty else { return }
             if let adventure = adventure {
+                if adventure.entryCounter >= 11 {
+                    adventure.isArchived = true
+                } else {
+                    adventure.entryCounter += 1
+                }
                 AdventureController.shared.update(adventure: adventure) { (result) in
                     switch result {
-                    case .success(let adventure):
-                        
+                    case .success(_):
+                        self.tabBarController?.selectedIndex = 0
                     case .failure(let error):
                         print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
                     }

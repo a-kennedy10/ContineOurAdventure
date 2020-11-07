@@ -218,7 +218,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="84c-eb-3WT"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Continue Adventure" id="tvs-jz-FFh"/>
+                    <navigationItem key="navigationItem" title="Continue Adventure" id="tvs-jz-FFh">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="info.circle" catalog="system" id="gA0-PV-wje">
+                            <connections>
+                                <action selector="guideButtonTapped:" destination="efe-46-VNg" id="jua-2v-o8p"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="adventureTitleLabel" destination="DGJ-q7-cCM" id="7uA-2X-suq"/>
                         <outlet property="continueAdventureTextView" destination="G8D-IB-KzM" id="9JC-op-Hhc"/>
@@ -305,53 +311,77 @@
             </objects>
             <point key="canvasLocation" x="2539" y="1401"/>
         </scene>
-        <!--View Controller-->
+        <!--Title Screen View Controller-->
         <scene sceneID="5l6-Ca-ZH1">
             <objects>
-                <viewController id="EkL-kC-dvr" sceneMemberID="viewController">
+                <viewController id="EkL-kC-dvr" customClass="TitleScreenViewController" customModule="CoA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F4R-e4-Ok0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="him-hF-JK6">
-                                <rect key="frame" x="175" y="615" width="247" height="118"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ncd-PF-DQO">
+                                <rect key="frame" x="32" y="76" width="350" height="352"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="aYp-Pd-3Ek">
+                                <rect key="frame" x="200" y="535" width="206" height="118"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Username..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xxa-53-EVE">
-                                        <rect key="frame" x="0.0" y="0.0" width="247" height="34"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Username..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vOU-5A-VOJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="206" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Password..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CbO-t9-3Hs">
-                                        <rect key="frame" x="0.0" y="42" width="247" height="34"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Password..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S1M-Nf-gZ8">
+                                        <rect key="frame" x="0.0" y="42" width="206" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ijl-sS-ZbO">
-                                        <rect key="frame" x="0.0" y="84" width="247" height="34"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fOI-wu-0WT">
+                                        <rect key="frame" x="0.0" y="84" width="206" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7wg-UM-q0u">
+                                <rect key="frame" x="335" y="692" width="47" height="30"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Sign In"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Q9D-u8-pbM" firstAttribute="trailing" secondItem="him-hF-JK6" secondAttribute="trailing" constant="-8" id="NE8-fY-eZ4"/>
-                            <constraint firstItem="him-hF-JK6" firstAttribute="leading" secondItem="Q9D-u8-pbM" secondAttribute="leading" constant="175" id="ajL-eM-BiP"/>
-                            <constraint firstItem="Q9D-u8-pbM" firstAttribute="bottom" secondItem="him-hF-JK6" secondAttribute="bottom" constant="129" id="lhX-zk-hEC"/>
+                            <constraint firstItem="aYp-Pd-3Ek" firstAttribute="leading" secondItem="Q9D-u8-pbM" secondAttribute="leading" constant="200" id="3Ne-RT-QuH"/>
+                            <constraint firstItem="Q9D-u8-pbM" firstAttribute="trailing" secondItem="aYp-Pd-3Ek" secondAttribute="trailing" constant="8" id="7Mo-wt-sNM"/>
+                            <constraint firstItem="Q9D-u8-pbM" firstAttribute="trailing" secondItem="7wg-UM-q0u" secondAttribute="trailing" constant="32" id="GOJ-rh-w4J"/>
+                            <constraint firstItem="Ncd-PF-DQO" firstAttribute="top" secondItem="Q9D-u8-pbM" secondAttribute="top" constant="32" id="J3u-Zo-fGQ"/>
+                            <constraint firstItem="Q9D-u8-pbM" firstAttribute="trailing" secondItem="Ncd-PF-DQO" secondAttribute="trailing" constant="32" id="NcV-0b-Rwf"/>
+                            <constraint firstItem="Ncd-PF-DQO" firstAttribute="leading" secondItem="Q9D-u8-pbM" secondAttribute="leading" constant="32" id="R7F-hA-x2F"/>
+                            <constraint firstItem="7wg-UM-q0u" firstAttribute="top" secondItem="aYp-Pd-3Ek" secondAttribute="bottom" constant="39" id="e3C-ZD-kp6"/>
+                            <constraint firstItem="Q9D-u8-pbM" firstAttribute="bottom" secondItem="Ncd-PF-DQO" secondAttribute="bottom" constant="434" id="j7R-FC-HAX"/>
+                            <constraint firstItem="aYp-Pd-3Ek" firstAttribute="top" secondItem="Ncd-PF-DQO" secondAttribute="bottom" constant="107" id="oIR-34-s5f"/>
+                            <constraint firstItem="Q9D-u8-pbM" firstAttribute="bottom" secondItem="7wg-UM-q0u" secondAttribute="bottom" constant="140" id="r2G-Z0-Tn7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Q9D-u8-pbM"/>
                     </view>
+                    <connections>
+                        <outlet property="confirmPasswordTextField" destination="fOI-wu-0WT" id="Xlk-ae-KjU"/>
+                        <outlet property="logoUIView" destination="Ncd-PF-DQO" id="EWi-cT-6vi"/>
+                        <outlet property="passwordTextField" destination="S1M-Nf-gZ8" id="deb-X4-R60"/>
+                        <outlet property="usernameTextField" destination="vOU-5A-VOJ" id="EKB-YK-pid"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="twD-pH-FbS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1003" y="646"/>
+            <point key="canvasLocation" x="-1004.3478260869566" y="645.53571428571422"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="LAb-Jb-p7v">
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="aqQ-Gw-KBA" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="cEr-Hr-8VN"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wOu-16-53C">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>

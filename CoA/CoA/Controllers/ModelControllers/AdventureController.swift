@@ -35,8 +35,26 @@ class AdventureController {
         }
     }
     
-    func fetchAdventure(completion: @escaping (Result<[Adventure]?, AdventureError>) -> Void) {
-        let predicate = NSPredicate(value: true)
+    func fetchAdventureToContinue(completion: @escaping (Result<[Adventure]?, AdventureError>) -> Void) {
+        let predicate = NSPredicate(format: "isArchived == false") // return not archived
+        let query = CKQuery(recordType: AdventureStrings.recordTypekey, predicate: predicate)
+        
+        publicDB.perform(query, inZoneWith: nil) { (records, error) in
+            if let error = error {
+                print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+                return completion(.failure(.ckError(error)))
+            }
+            guard let records = records else { return completion(.failure(.noData)) }
+            let adventures = records.compactMap{ Adventure(ckRecord: $0) }
+            self.adventures = adventures
+            completion(.success(adventures))
+            
+        }
+    }
+    
+    func fetchAdventureToArchive(completion: @escaping (Result<[Adventure]?, AdventureError>) -> Void) {
+        // isArchived = true
+        let predicate = NSPredicate(format: "isArchived == true") // return only archived
         let query = CKQuery(recordType: AdventureStrings.recordTypekey, predicate: predicate)
         
         publicDB.perform(query, inZoneWith: nil) { (records, error) in
@@ -69,11 +87,6 @@ class AdventureController {
         
     }
     
-    func incrementEntryCount(with adventure: Adventure) {
-        adventure.entryCounter += 1
-        if adventure.entryCounter >= 10 {
-            adventure.isArchived = true
-        }
-    }
+    
     
 }
